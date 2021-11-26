@@ -16,12 +16,14 @@ services:
     depends_on:
       - mysql
   mysql:
+    platform: linux/x86_64 
     image: mysql:5.7
+    container_name: app_db
     environment:
-      MYSQL_DATABASE: ****
-      MYSQL_USER: ****
-      MYSQL_PASSWORD: ****
-      MYSQL_ROOT_PASSWORD: ****
+      MYSQL_DATABASE: common
+      MYSQL_USER: hara
+      MYSQL_PASSWORD: hara
+      MYSQL_ROOT_PASSWORD: hara
     ports:
       - "3306:3306"
     volumes:
